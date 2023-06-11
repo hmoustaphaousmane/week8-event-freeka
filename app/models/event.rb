@@ -26,4 +26,10 @@ class Event < ApplicationRecord
       errors.add(:duration, "must be positive and a multiple of five (5).")
     end
   end
+
+  # Send email to user after event creation
+  after_create :event_send
+  def event_send
+    UserMailer.event_email(self).deliver_now 
+  end
 end
