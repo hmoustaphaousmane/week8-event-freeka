@@ -1,3 +1,8 @@
+# Call gem `dotenv`
+require 'dotenv' 
+# Load the .env file
+Dotenv.load('/.env')
+
 # frozen_string_literal: true
 
 # Assuming you have not yet modified this file, each configuration option below
@@ -14,7 +19,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'e1de9c28bd52141dbf38dc2b4d241e3ec0e2e166b3f09aea4babbb89e2a6d58b060290a733fed458e11916af3906b42b1eb6c8051100b37325bbd9ed08c05128'
+  # config.secret_key = ENV["SECRET_KEY"]
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
